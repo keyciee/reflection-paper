@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflection on Data Privacy and Cyber Awareness</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #1a1a1a; 
+            color: #f0f0f0; 
+        }
+        h1 {
+            color: #00bcd4; 
+            text-align: center; 
+            font-size: 26px; 
+            margin-bottom: 20px; 
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(30, 30, 30, 0.9); 
+            padding: 20px;
+            border-radius: 10px; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
+            border: 2px solid #00bcd4; 
+            position: relative; 
+        }
+       
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border-radius: 10px;
+            background: rgba(0, 188, 212, 0.5); 
+            z-index: -1; 
+            filter: blur(10px); 
+        }
+        
+        #reflection-content p {
+            text-indent: 30px; 
+            margin-top: 10px;  
+        }
+        
+        .rate-button {
+            background-color: black;
+            color: blue; 
+            border: 2px solid #00bcd4;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px; 
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s; 
+        }
+        .rate-button:hover {
+            background-color: #00bcd4; 
+            color: black; 
+            transform: scale(1.05); 
+        }
+        .rating-header {
+            text-align: center; 
+            font-size: 18px; 
+            color: #f0f0f0; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Reflection on Data Privacy and Cyber Awareness</h1>
+    <div id="reflection-content"></div>
+</div>
+
+<div style="text-align: center; margin-top: 20px;">
+    <h2 class="rating-header">Rate my reflection paper:</h2>
+    <button class="rate-button" onclick="showRating(1)">1</button>
+    <button class="rate-button" onclick="showRating(2)">2</button>
+    <button class="rate-button" onclick="showRating(3)">3</button>
+    <button class="rate-button" onclick="showRating(4)">4</button>
+    <button class="rate-button" onclick="showRating(5)">5</button>
+</div>
+
+<py-script>
+    reflection_text = """Data privacy is a very important aspect of life, especially in the digital world. Data privacy is information about a person that cannot reach unauthorized parties. Constant connectivity in today's digital world leads to incessant collection and sharing of personal data across several platforms, hence the need to protect one's personal information as this can lead to such crimes as scams or others connected with cybercrime. It is essential in the digital world, where personal data is at times vulnerable, it is the responsibility of the individual to ensure that such information is well guarded. Personal data includes names, addresses, financial information, and even online behavior. If mishandled, it may be used in fraudulent activities by malicious actors. Personally, I know that my data would be an image of whom I am in the virtual world, and without the right protection, it would pose the most unbelievable security threats.
+
+    Data privacy breaches tend to occur in all directions, but a large percentage of it is from scamming, which is one of the common methods usually employed by cyber offenders. Scams imply misleading someone into disclosing personal information for other crime-doing purposes. Such uses include, among others, identity theft for access to sensitive financial data or pretending to make other people fall victim to various tricks. The results of this violation will be financially and emotionally destructive for the victim. It is a destruction of a sense of security on his part and a further lowering of their sense of power.
+
+    In order to protect my personal data online, I perform necessary precautions. I make sure to not share where and with whom I am sharing my information. I do not provide sensitive details with unknown websites or persons and, if requests are put up for personal data, I ensure that it is legal. For instance, if a bank requests certain information about me, I go back to them through official lines to confirm the request. One should be very careful about phishing scams and spam websites that ask for personal details.
+
+    I have never been a victim of a cyber attack, but my friend was once threatened with such a situation. Her Facebook account has been hacked and sent messages to some contacts of the victim and tried to take money from them. Unfortunately, one of the contacts fell for the scam and transferred money to the hacker via an e-wallet service. It affected not only the victim but also all her social network.
+
+    Cyber awareness, as well as data privacy, is important in the safety of any digital landscape. One key takeaway I learned from the campaign is, “Treat your device as someone and not just something”. It made me realize that to be aware of someone who could potentially watch me through my device. The campaign about Data Privacy and Cyber Awareness conducted by our campus made me understand on how to protect personal and important data and analyze cyber threats. Therefore, even those who are not as aware of cyber security can be empowered by being involved in awareness campaigns and continuing education to protect their data in the best possible way."""
+
+    from pyscript import Element
+
+    reflection_element = Element('reflection-content')
+    # Replace line breaks with paragraph tags for proper formatting
+    formatted_reflection_text = "<p>" + reflection_text.replace('\n\n', '</p><p>').replace('\n', '<br>') + "</p>"
+    reflection_element.element.innerHTML = formatted_reflection_text
+</py-script>
+
+<script>
+    function showRating(rating) {
+        alert("Thank you for rating my reflection paper a " + rating + "!");
+    }
+</script>
+
+
+</body>
+</html>
